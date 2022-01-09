@@ -1,0 +1,41 @@
+.movie-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.movie-title {
+  font-size: 24px;
+
+  &::after {
+    content: '\25BC';
+    width: 3px;
+    height: 4px;
+    cursor: pointer;
+    // background-color: #000;
+  }
+}
+
+.movie-information {
+  display: none;
+  background-color: azure;
+  padding: 10px;
+  border-radius: 3px;
+
+  &__name {
+    color: gray;
+  }
+}
+
+.movie-information--active {
+  display: block;
+}
+
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+}

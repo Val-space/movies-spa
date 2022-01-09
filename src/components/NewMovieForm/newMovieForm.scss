@@ -1,0 +1,25 @@
+.form-title {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.input {
+  width: 200px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+.form-button {
+  width: 100px;
+  padding: 10px;
+  background-color: #def9ff;
+  border: 1px solid white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: #a6dde9;
+  }
+}
