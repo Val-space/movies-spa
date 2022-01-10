@@ -1,0 +1,20 @@
+.form-upload {
+  margin-top: 50px;
+
+  &__input {
+    height: 50px;
+  }
+
+  &__button {
+    width: 100px;
+    padding: 10px;
+    background-color: #def9ff;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: #e9a6e3;
+    }
+  }
+}

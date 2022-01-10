@@ -1,13 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #feffff;;
+}
+
 .container {
   max-width: 90%;
-  margin: 0 auto;
+  margin: 30px auto 0;
   font-size: 18px;
 }
+
 .movieList-title {
   text-align: center;
-  margin: 20px 0;
+  margin: 40px 0;
   font-weight: 500;
   font-size: 24px;
+  letter-spacing: 1px;
 }
 
 .sort-btn {
@@ -26,7 +36,7 @@
   width: 200px;
   height: 26px;
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 3px;
   margin-bottom: 10px;
 }

@@ -80,16 +80,17 @@ export const NewMovieForm = ({ addMovie }) => {
           />
         </div>
         <div className="input-format">
-          <input
+          <select
             className="input"
-            required
-            type="format"
-            id="format"
-            placeholder="Enter movie format"
-            value={newMovie.format}
             name="format"
+            id="format"
+            value={newMovie.format}
             onChange={handleChange}
-          />
+          >
+            <option value="DVD">DVD</option>
+            <option value="Blu-Ray">Blu-Ray</option>
+            <option value="VHC">VHC</option>
+          </select>
         </div>
         <button
           className="form-button"

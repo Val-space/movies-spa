@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import './fileUpload.scss';
 
 export function FileUpload({ showUploadedMovies }) {
   const [uploadedMovies, setUploadedMovies] = useState([]);
   const handleFile = (e) => {
     const content = e.target.result;
-    // eslint-disable-next-line
-    const parseMovies = content.split(/\n\r\n/).map(movie => {
+    const parseMovies = content.split(/\n\r\n/).map((movie) => {
       const movieProperties = movie.trim().split(/\r\n/);
 
       const movieValue = movieProperties.map((property) => {
-        const value = property.split(': ');
+        const value = property.split(': ')[1];
 
-        return value[1];
+        return value;
       });
 
       return {
@@ -35,20 +35,22 @@ export function FileUpload({ showUploadedMovies }) {
   };
 
   return (
-    <div>
+    <div className="form-upload">
       <input
+        className="form-upload__input"
         type="file"
         accept=".txt"
         onChange={e => handleChangeFile(e.target.files[0])}
       />
       <button
         type="button"
+        className="form-upload__button"
         onClick={() => {
           showUploadedMovies(uploadedMovies);
           setUploadedMovies([]);
         }}
       >
-        Show Movies
+        Show movies
       </button>
     </div>
   );

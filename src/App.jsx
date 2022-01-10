@@ -3,17 +3,50 @@ import './App.scss';
 import { MovieList } from './components/MovieList/MovieList';
 import { FileUpload } from './components/FileUpload/FileUpload';
 import { NewMovieForm } from './components/NewMovieForm/NewMovieForm';
-import { moviesApi } from './api/apiData';
+import { GetMoviesFromServer } from './api/api';
 
 export const App = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([
+    {
+      id: '1',
+      title: 'Blazing Saddles',
+      year: 1974,
+      format: 'VHS',
+      actors: [
+        'Harvey Korman',
+        'Gene Wilder',
+        'Slim Pickens',
+        'Madeline Kahn',
+      ],
+    },
+    {
+      id: '2',
+      title: 'Matrix',
+      year: 2000,
+      format: 'VHS',
+      actors: [
+        'Mel Brooks',
+      ],
+    },
+  ]);
+
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    setMovies(moviesApi);
+    async function fetchPosts() {
+      try {
+        const moviesFromServer = await GetMoviesFromServer();
+
+        // eslint-disable-next-line no-console
+        console.log(moviesFromServer);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error);
+      }
+    }
+
+    fetchPosts();
   }, []);
-  // eslint-disable-next-line no-console
-  console.log(movies);
 
   const addMovie = (newMovie) => {
     setMovies([

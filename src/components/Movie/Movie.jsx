@@ -12,7 +12,8 @@ export const Movie = ({ movie, removeMovie }) => {
         <div
           role="button"
           tabIndex={0}
-          className="movie-title"
+          className={classnames('movie-title',
+            { 'movie-title--open': isShown })}
           onClick={() => setIsShown(!isShown)}
           onKeyDown={() => setIsShown(!isShown)}
         >
@@ -39,7 +40,7 @@ export const Movie = ({ movie, removeMovie }) => {
         </p>
         <div>
           <span className="movie-information__name">Cast: </span>
-          {movie.actors.map(actor => <p>{actor}</p>)}
+          {movie.actors.map(actor => <p key={actor}>{actor}</p>)}
         </div>
       </div>
     </div>
